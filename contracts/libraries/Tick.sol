@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: BUSL-1.1
-pragma solidity >=0.5.0 <0.8.0;
+pragma solidity =0.8.12;
 
 import './LowGasSafeMath.sol';
 import './SafeCast.sol';
@@ -145,8 +145,8 @@ library Tick {
 
         // when the lower (upper) tick is crossed left to right (right to left), liquidity must be added (removed)
         info.liquidityNet = upper
-            ? int256(info.liquidityNet).sub(liquidityDelta).toInt128()
-            : int256(info.liquidityNet).add(liquidityDelta).toInt128();
+            ? info.liquidityNet - liquidityDelta
+            : info.liquidityNet - liquidityDelta;
     }
 
     /// @notice Clears tick data
