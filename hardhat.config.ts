@@ -7,7 +7,7 @@ require("@matterlabs/hardhat-zksync-solc");
 
 export default {
   zksolc: {
-    version: "0.1.0",
+    version: "1.1.6",
     compilerSource: "binary",
     settings: {
       optimizer: {
@@ -15,9 +15,9 @@ export default {
       },
       experimental: {
         dockerImage: "matterlabs/zksolc",
-        tag: "v1.1.0"
+        tag: "v1.1.6"
       },
-      compilerPath: "./zksolc_x86"
+      compilerPath: "./zksolc-linux-amd64-musl-v1.1.6"
     },
   },
   zkSyncDeploy: {
